@@ -7,12 +7,12 @@ A trusted app for parents and caregivers, providing child-safe medication guidan
 - Simple, intuitive UI designed for caregivers.
 
 ## Screenshots
-![Onboarding Screen](images/onboarding_screen_1.png)
-![Onboarding Screen](images/onboarding_screen_2.png)
-![Home Screen](images/home_screen.png)
-![Medication Details](images/details_screen_1.png)
-![Medication Details](images/details_screen_2.png)
-![Settings Screen](images/settings_screen.png)
+![Onboarding Screen](assets/onboarding_screen_1.png)
+![Onboarding Screen](assets/onboarding_screen_2.png)
+![Home Screen](assets/home_screen.png)
+![Medication Details](assets/details_screen_1.png)
+![Medication Details](assets/details_screen_2.png)
+![Settings Screen](assets/settings_screen.png)
 
 ## Demo
 ![App Demo](assets/app_demo.gif)
