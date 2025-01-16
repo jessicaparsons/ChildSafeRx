@@ -13,7 +13,10 @@ A trusted app for parents and caregivers, providing child-safe medication guidan
 | ![Medication Details](assets/details_screen_1.png) | ![Medication Details](assets/details_screen_2.png) | ![Settings Screen](assets/settings_screen.png) |
 
 ## Demo
-![App Demo](assets/app_demo.gif)
+| iPhone | iPad |
+| ------------- | ------------- |
+| ![App Demo](assets/app_demo.gif) | ![App Demo](assets/ipad_app_demo.gif) |
+
 
 ## Features
 - 📱 Modern iOS Development
@@ -36,3 +39,8 @@ A trusted app for parents and caregivers, providing child-safe medication guidan
   - Clear warnings and disclaimers to promote safe and responsible usage.
 - 📂 Version Control and Documentation
   - Managed the project using Git for version control and GitHub for portfolio presentation.
+
+## Built With
+- Swift 5
+- SwiftUI
+- Xcode 16.2
