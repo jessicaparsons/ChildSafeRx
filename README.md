@@ -25,9 +25,10 @@ A trusted app for parents and caregivers, providing child-safe medication guidan
 - 🖌️ Dynamic User Interface
   - Multi-screen onboarding flow implemented with PageTabView for a seamless user introduction.
   - Responsive and visually engaging child-friendly interface with dynamic, data-driven content.
-- 📊 Data Management
-  - Custom data model to fetch, organize, and display medication information efficiently.
-  - Leveraged Swift structures and protocols for clean and maintainable data handling.
+- 📊 Advanced Data Management
+  - Dynamically loads and organizes medication information using JSON parsing.
+  - Custom data model processes JSON input efficiently.
+  - Leveraged Swift's Codable protocol for clean and maintainable data decoding and handling.
 - 🔒 State Management
   - AppStorage used for persistent data storage, enabling smooth state-saving functionality.
   - Dynamic views that adapt to user interaction and data changes.
