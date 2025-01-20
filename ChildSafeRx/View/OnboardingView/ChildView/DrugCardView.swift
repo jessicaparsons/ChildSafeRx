@@ -11,7 +11,7 @@ struct DrugCardView: View {
     
     //MARK: - PROPERTIES
     
-    var drug: Drug
+    var colors: [Color]
     var onboardingImage: String
     var onboardingHeadline: String
     var onboardingText: String
@@ -22,11 +22,11 @@ struct DrugCardView: View {
     
     var body: some View {
         ZStack {
-            VStack(spacing: 20) {
+            VStack(spacing: Constants.verticalSpacing) {
                 Image(onboardingImage)
                     .resizable()
                     .scaledToFit()
-                    .shadow(color: Color(red:0, green: 0, blue: 0, opacity: 0.15), radius: 8, x: 6, y: 8)
+                    .shadow(color: Color.shadowColor, radius: 8, x: 6, y: 8)
                     .scaleEffect(isAnimating ? 1.0 : 0.8)
                 
                 Text(onboardingHeadline)
@@ -34,13 +34,13 @@ struct DrugCardView: View {
                     .multilineTextAlignment(.center)
                     .font(.largeTitle)
                     .fontWeight(.heavy)
-                    .shadow(color: Color(red: 0, green: 0, blue: 0, opacity: 0.15), radius: 2, x: 2, y: 2)
-                    .padding(.horizontal, 24)
+                    .shadow(color: Color.shadowColor, radius: 2, x: 2, y: 2)
+                    .padding(.horizontal, Constants.horizontalPadding)
                 
                 Text(onboardingText)
                     .foregroundColor(Color.white)
                     .multilineTextAlignment(.center)
-                    .padding(.horizontal, 24)
+                    .padding(.horizontal, Constants.horizontalPadding)
                     .frame(maxWidth: 480)
                 
                 StartButtonView()
@@ -54,9 +54,9 @@ struct DrugCardView: View {
             }
         }
         .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .center)
-        .background(LinearGradient(gradient: Gradient(colors: drug.gradientColors), startPoint: .top, endPoint: .bottom))
+        .background(LinearGradient(gradient: Gradient(colors: colors), startPoint: .top, endPoint: .bottom))
         .cornerRadius(20)
-        .padding(.horizontal, 20)
+        .padding(.horizontal, Constants.horizontalPadding)
     }
 }
 
@@ -67,5 +67,5 @@ struct DrugCardView: View {
 
 
 #Preview {
-    DrugCardView(drug: drugsData[10], onboardingImage: "ibuprofen", onboardingHeadline: "Getting Started with ChildSafeRx", onboardingText: "Your go-to guide for safe, trusted medication information tailored for infants, toddlers, and young children. We’re here to empower caregivers with essential knowledge for their child’s health and well-being.")
+    DrugCardView(colors: .logoGradient, onboardingImage: "ibuprofen", onboardingHeadline: "Getting Started with ChildSafeRx", onboardingText: "Your go-to guide for safe, trusted medication information tailored for infants, toddlers, and young children. We’re here to empower caregivers with essential knowledge for their child’s health and well-being.")
 }

@@ -13,8 +13,12 @@ struct SourceLinkView: View {
             HStack {
                 Text("Content Source")
                 Spacer()
-                Link("medlineplus.gov", destination: URL(string: "https://medlineplus.gov/encyclopedia.html")!)
-                Image(systemName: "arrow.up.right.square")
+                if let url = URL(string: "https://medlineplus.gov/encyclopedia.html") {
+                    Link("medlineplus.gov", destination: url)
+                    Image(systemName: "arrow.up.right.square")
+                } else {
+                    Text("medlineplus.gov")
+                }
             }
             .font(.footnote)
         }

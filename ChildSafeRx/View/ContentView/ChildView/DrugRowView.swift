@@ -9,7 +9,7 @@ import SwiftUI
 
 struct DrugRowView: View {
     
-    var drug: Drug
+    let drug: Drug
     
     var body: some View {
         HStack {
@@ -21,7 +21,7 @@ struct DrugRowView: View {
                 .frame(width: 80, height: 80, alignment: .center)
                 .shadow(color: Color(red: 0, green: 0, blue: 0, opacity: 0.3), radius: 3, x: 2, y: 2)
                 .background(
-                    LinearGradient(gradient: Gradient(colors: drug.gradientColors), startPoint: .top, endPoint: .bottom)
+                    LinearGradient(gradient: Gradient(colors: drug.gradientBackground), startPoint: .top, endPoint: .bottom)
                     )
                 .cornerRadius(8)
             
@@ -39,7 +39,9 @@ struct DrugRowView: View {
 }
 
 #Preview(traits: .sizeThatFitsLayout) {
-    DrugRowView(drug: drugsData[0])
+    DrugRowView(drug: PreviewData.sampleDrug)
         .padding()
+    
+    
 }
 

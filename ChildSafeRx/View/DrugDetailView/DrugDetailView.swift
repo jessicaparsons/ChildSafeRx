@@ -11,21 +11,22 @@ import SwiftUI
 
 struct DrugDetailView: View {
     
-    var drug: Drug
+    let drug: Drug
     
     var body: some View {
         NavigationView {
             ScrollView(.vertical, showsIndicators: false) {
-                VStack(alignment: .center, spacing: 20) {
+                VStack(alignment: .center, spacing: Constants.verticalSpacing) {
                     //HEADER
                     DrugHeaderView(drug: drug)
                     
-                    VStack(alignment: .leading, spacing: 20) {
+                    VStack(alignment: .leading, spacing: Constants.verticalSpacing) {
                         //TITLE
                         Text(drug.title)
                             .font(.largeTitle)
                             .fontWeight(.heavy)
-                            .foregroundColor(drug.gradientColors[1])
+                            .foregroundColor(drug.gradientBackground[1])
+                        
                         
                         //HEADLINE
                         Text(drug.headline)
@@ -38,7 +39,7 @@ struct DrugDetailView: View {
                         //SUBHEADLINE
                         Text("Learn more about \(drug.title)".uppercased())
                             .fontWeight(.bold)
-                            .foregroundColor(drug.gradientColors[1])
+                            .foregroundColor(drug.gradientBackground[1])
                         
                         //DESCRIPTION
                         Text(drug.description)
@@ -50,7 +51,7 @@ struct DrugDetailView: View {
                             .padding(.bottom, 40)
                         
                     }//:VSTACK
-                    .padding(.horizontal, 20)
+                    .padding(.horizontal, Constants.horizontalPadding)
                     .frame(maxWidth: 640, alignment: .center)
                 }//:VSTACK
                 .navigationBarTitle(drug.title, displayMode: .inline)
@@ -63,5 +64,5 @@ struct DrugDetailView: View {
 }
 
 #Preview {
-    DrugDetailView(drug: drugsData[0])
+    DrugDetailView(drug: PreviewData.sampleDrug)
 }

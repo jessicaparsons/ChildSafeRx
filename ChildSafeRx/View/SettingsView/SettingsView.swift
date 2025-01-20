@@ -15,7 +15,7 @@ struct SettingsView: View {
     var body: some View {
         NavigationView {
             ScrollView(.vertical, showsIndicators: false){
-                VStack(spacing: 20){
+                VStack(spacing: Constants.verticalSpacing){
                     //MARK: - SECTION 1
                     
                     GroupBox(
@@ -28,7 +28,7 @@ struct SettingsView: View {
                                 .resizable()
                                 .scaledToFit()
                                 .frame(width: 80, height: 80)
-                                .cornerRadius(9)
+                                .cornerRadius(Constants.cornerRadius)
                             Text("ChildSafeRx is a trusted resource that provides parents and caregivers with essential, easy-to-understand information on child-safe medications, including their uses, safety guidelines, and precautions.")
                                 .font(.footnote)
                         }
@@ -59,7 +59,7 @@ struct SettingsView: View {
                         }
                         .padding()
                         .background(Color(UIColor.tertiarySystemBackground)
-                            .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
+                            .clipShape(RoundedRectangle(cornerRadius: Constants.cornerRadius, style: .continuous))
                         )
                         
                     }

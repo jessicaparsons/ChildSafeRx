@@ -9,17 +9,17 @@ import SwiftUI
 
 struct DrugHeaderView: View {
     
-    var drug: Drug
+    let drug: Drug
     @State private var isAnimatingImage: Bool = false
     
     var body: some View {
         ZStack {
-            LinearGradient(gradient: Gradient(colors: drug.gradientColors), startPoint: .topLeading, endPoint: .bottomTrailing)
+            LinearGradient(gradient: Gradient(colors: drug.gradientBackground), startPoint: .topLeading, endPoint: .bottomTrailing)
             
             Image(drug.image)
                 .resizable()
                 .scaledToFit()
-                .shadow(color: Color(red: 0, green: 0, blue: 0, opacity: 0.15), radius: 8, x: 6, y: 8)
+                .shadow(color: Color.shadowColor, radius: 8, x: 6, y: 8)
                 .padding(.vertical, 20)
                 .scaleEffect(isAnimatingImage ? 1.0 : 0.6)
         }//:ZSTACK
@@ -33,6 +33,6 @@ struct DrugHeaderView: View {
 }
 
 #Preview(traits: .fixedLayout(width: 375, height: 440)) {
-    DrugHeaderView(drug: drugsData[0])
+    DrugHeaderView(drug: PreviewData.sampleDrug)
         
 }

@@ -11,7 +11,7 @@ import SwiftData
 struct ContentView: View {
     
     @State private var isShowingSettings: Bool = false
-    var drugs: [Drug] = drugsData
+    let drugs: [Drug] = Bundle.main.decode("drugsData.json")
 
     var body: some View {
         NavigationView {
@@ -26,17 +26,17 @@ struct ContentView: View {
                 }
                 .navigationTitle("Knowledge Base")
                 .navigationBarItems(trailing:
-                                        Button(action: {
-                    isShowingSettings = true
-                }) {
+                    Button(action: {
+                        isShowingSettings = true
+                    }) {
                     Image(systemName: "gearshape")
-                }
+                    }
                     .sheet(isPresented: $isShowingSettings) {
                         SettingsView()
                     }
                 )
                 .scrollContentBackground(.hidden)
-                .background(Color("BackgroundColor").edgesIgnoringSafeArea(.all))
+                .background(Color(Color.backgroundColor).edgesIgnoringSafeArea(.all))
             }//:ZSTACK
         }//:NAVIGATION
         .navigationViewStyle(StackNavigationViewStyle())//IPAD
@@ -44,5 +44,5 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView(drugs: drugsData)
+    ContentView()
 }

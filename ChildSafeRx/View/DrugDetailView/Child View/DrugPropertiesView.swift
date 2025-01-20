@@ -11,7 +11,7 @@ import SwiftUI
 struct DrugPropertiesView: View {
     
     @State private var isExpanded = true
-    var drug: Drug
+    let drug: Drug
     let properties: [String] = ["Form",
                                 "Safe for Newborns",
                                 "Safe for Toddlers",
@@ -49,5 +49,5 @@ struct DrugPropertiesView: View {
 }
 
 #Preview {
-    DrugPropertiesView(drug: drugsData[0])
+    DrugPropertiesView(drug: PreviewData.sampleDrug)
 }
